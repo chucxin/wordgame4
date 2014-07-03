@@ -8,6 +8,10 @@ if(!empty($lan)){
 
 	header('Location: '.$_SERVER['PHP_SELF']);
 }
+
+
+
+
 ?>
 
 
@@ -33,6 +37,82 @@ if(!empty($lan)){
 require_once('../startsession.php');
 $username = $_SESSION['username'];
 require_once('../header.php');
+
+// LANGUAGES
+switch($_COOKIE['language']){
+	case 'chinese':
+		$Ltime = "时间";
+		$Lsteps = "步数";
+		$Lhighscores = "排行榜";
+		$Lrestart = "重新开始";
+		$Lsubmitscore = "上传分数";
+		$Lyouwin = "你赢了！";
+		$Lyoulose = "时间到，你输了！";
+		$Lclose = "关闭";
+		$Lyourscoreis = "你的得分是";
+		$Ltryagain = "再试一次";
+		$Lyourname = "你的名字";
+		$Lsubmit = "提交";
+		break;
+	case 'vietnamese':
+		$Ltime = "Thời gian";
+		$Lsteps = "Số bước";
+		$Lhighscores = "Bảng điểm";
+		$Lrestart = "Chơi lại";
+		$Lsubmitscore = "Tải điểm lên";
+		$Lyouwin = "Bạn thắng rồi!";
+		$Lyoulose = "Hết thời gian, bạn thua rồi!";
+		$Lclose = "Đóng";
+		$Lyourscoreis = "Điểm của bạn la ";
+		$Ltryagain = "Thử lần nữa";
+		$Lyourname = "Tên";
+		$Lsubmit = "Tải lên";
+		break;
+	case 'english':
+		$Ltime = "Time";
+		$Lsteps = "Steps";
+		$Lhighscores = "High Scores";
+		$Lrestart = "Restart";
+		$Lsubmitscore = "Submit Score";
+		$Lyouwin = "You Win!";
+		$Lyoulose = "Sorry, Time's Up.";
+		$Lclose = "Close";
+		$Lyourscoreis = "Your Score is ";
+		$Ltryagain = "Try Again";
+		$Lyourname = "Your name ";
+		$Lsubmit = "Submit";
+		break;
+	case 'esperanto':
+		$Ltime = "Tempo";
+		$Lsteps = "Paŝnombro";
+		$Lhighscores = "Poentaro";
+		$Lrestart = "Restartu";
+		$Lsubmitscore = "Submetu Poenton";
+		$Lyouwin = "Vi Venkis!";
+		$Lyoulose = "Vi Malvenkis!";
+		$Lclose = "Fermu";
+		$Lyourscoreis = "Via Poento estas ";
+		$Ltryagain = "Reprovu";
+		$Lyourname = "Via nomo ";
+		$Lsubmit = "Submetu";
+		break;
+	default:
+		$Ltime = "Time";
+		$Lsteps = "Steps";
+		$Lhighscores = "High Scores";
+		$Lrestart = "Restart";
+		$Lsubmitscore = "Submit Score";
+		$Lyouwin = "You Win!";
+		$Lyoulose = "Sorry, Time's Up.";
+		$Lclose = "Close";
+		$Lyourscoreis = "Your Score is ";
+		$Ltryagain = "Try Again";
+		$Lyourname = "Your name ";
+		$Lsubmit = "Submit";
+		break;
+}
+
+
 ?>
 
 <div id="allgame">
@@ -405,31 +485,30 @@ require_once('../header.php');
 	<div id="transparency"></div>
 	<!-- win -->
 	<div id="win">
-		<div id="youwin">You Win!</div>
-		<div id="yourscore">Your score is <span id="displayscore">0</span></div>
-		<div class="button1" id="submitscore">Submit Score</div>
-		<div class="button1 restart">Replay</div>
-		<a href="http://www.bluebees.org" target="_blank"><div class="button1">BlueBees.org</div></a>
+		<div id="youwin"><?php echo $Lyouwin?></div>
+		<div id="yourscore"><?php echo $Lyourscoreis?><span id="displayscore">0</span></div>
+		<div class="button1" id="submitscore"><?php echo $Lsubmitscore?></div>
+		<div class="button1 restart"><?php echo $Lrestart?></div>
 	</div>
 	<!-- lose -->
 	<div id="lose">
-		<div id="youlose">You Lose!</div>
-		<div class="button1 restart">Try Again</div>
+		<div id="youlose"><?php echo $Lyoulose?></div>
+		<div class="button1 restart"><?php echo $Ltryagain?></div>
 	</div>
 	<!-- submit score -->
 	<div id ="submit">
-		<div id="submittitle">Submit your score</div>
-		<div id="submitinputdiv">Your name: <input type="text" id="submitinput"/></div>
-		<div class="button1" id="submitscoresubmit">Submit</div>
-		<div class="button1" id="cancelsubmit">Cancel</div>
+		<div id="submittitle"><?php echo $Lsubmitscore?></div>
+		<div id="submitinputdiv"><?php echo $Lyourname?>: <input type="text" id="submitinput"/></div>
+		<div class="button1" id="submitscoresubmit"><?php echo $Lsubmit?></div>
+		<div class="button1" id="cancelsubmit"><?php echo $Lclose?></div>
 	</div>
 	<!-- highscores -->
 	<div id="highscores">
-		<div id="highscorestitle">High Scores</div>
+		<div id="highscorestitle"><?php echo $Lhighscores?></div>
 		<div id="highscoresdiv">
 		<table id="highscorestable"></table>
 		</div>
-		<div class="button1" id="closehighscores">Close</div>
+		<div class="button1" id="closehighscores"><?php echo $Lclose?></div>
 	</div>
 
 
@@ -440,16 +519,16 @@ require_once('../header.php');
 <!-- 右侧面板 -->
 <div id="panel">
 	<div>
-		<div class="paneltitle">Time</div>
+		<div class="paneltitle"><?php echo $Ltime?></div>
 		<div class="panelcontent" id="time">150</div>
 	</div>
 	<div>
-		<div class="paneltitle">Steps</div>
+		<div class="paneltitle"><?php echo $Lsteps?></div>
 		<div class="panelcontent" id="step">0</div>
 	</div>
 	<div>
-		<div class="button2" id="highscoresbutton">High Scores</div>
-		<div class="button2" id="panelrestart">Restart</div>
+		<div class="button2" id="highscoresbutton"><?php echo $Lhighscores?></div>
+		<div class="button2" id="panelrestart"><?php echo $Lrestart?></div>
 	</div>
 
 	<!-- guide -->
