@@ -8,13 +8,7 @@ if(!empty($lan)){
 
 	header('Location: '.$_SERVER['PHP_SELF']);
 }
-
-
-
-
 ?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,6 +47,7 @@ switch($_COOKIE['language']){
 		$Ltryagain = "再试一次";
 		$Lyourname = "你的名字";
 		$Lsubmit = "提交";
+		$Lguide = "点击蜂格，找出相同的两个汉字。";
 		break;
 	case 'vietnamese':
 		$Ltime = "Thời gian";
@@ -67,6 +62,7 @@ switch($_COOKIE['language']){
 		$Ltryagain = "Thử lần nữa";
 		$Lyourname = "Tên";
 		$Lsubmit = "Tải lên";
+		$Lguide = "Bấm những cái ô để tìm ra hai chữ Hán giống nhau.";
 		break;
 	case 'english':
 		$Ltime = "Time";
@@ -81,6 +77,7 @@ switch($_COOKIE['language']){
 		$Ltryagain = "Try Again";
 		$Lyourname = "Your name ";
 		$Lsubmit = "Submit";
+		$Lguide = "Click the cells to find 2 same characters.";
 		break;
 	case 'esperanto':
 		$Ltime = "Tempo";
@@ -95,6 +92,7 @@ switch($_COOKIE['language']){
 		$Ltryagain = "Reprovu";
 		$Lyourname = "Via nomo ";
 		$Lsubmit = "Submetu";
+		$Lguide = "Klaku la ĉelojn por trovi du samajn signojn.";
 		break;
 	default:
 		$Ltime = "Time";
@@ -109,6 +107,7 @@ switch($_COOKIE['language']){
 		$Ltryagain = "Try Again";
 		$Lyourname = "Your name ";
 		$Lsubmit = "Submit";
+		$Lguide = "Click the cells to find 2 same characters.";
 		break;
 }
 
@@ -533,7 +532,7 @@ switch($_COOKIE['language']){
 
 	<!-- guide -->
 	<div id="guide">
-		<p>
+		<?php echo $Lguide?>
 	</div>
 
 
