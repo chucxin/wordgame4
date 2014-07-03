@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-var bees = ["bee0.png", "bee1.png", "bee2.png", "bee3.png", "bee4.png", "bee5.png", "bee6.png", "bee7.png", "bee8.png", "bee9.png", "bee10.png", "bee11.png"];
+var bees = ["有", "他", "是", "还", "不", "也", "没", "来", "祝", "昕", "狗", "猫"];
 
 var game = new Game();
 game.selectBee(bees);
