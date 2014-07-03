@@ -97,12 +97,15 @@
 	background-color: #D6D6D6;
 }
 
-.image {
+.hz {
 	width: 75px;
 	height: 88px;
 	position: absolute;
-	background-repeat: no-repeat;
-	background-position: 8px 7px;
+	text-align: center;
+	line-height: 88px;
+	color: #BA6F06;
+	font-size: 30px;
+	font-family: helvetica;
 }
 
 .a {
