@@ -3,7 +3,9 @@ $(document).ready(function(){
 var bees = ["有", "他", "是", "还", "不", "也", "没", "来", "祝", "昕", "狗", "猫", "哥", "妹", "书"];
 
 var game = new Game();
-game.selectBees(bees);
+game.selectBees(bees); //选出汉字
+game.selectBee(); //做成数组
+game.putHanzi(); //把汉字放入砖块
 
 var c = 200;
 var t;
@@ -43,8 +45,8 @@ $(".rect").mousedown(function(){
 			// 如果两块一样
 			if(yn){
 				setTimeout(function(){
-					$("#bf"+id1+" .bb").css("background-color", "#94FFB0");
-					$("#bf"+id2+" .bb").css("background-color", "#94FFB0");
+					$("#bf"+id1+" .bb").css("background-color", "#9EFFF9");
+					$("#bf"+id2+" .bb").css("background-color", "#9EFFF9");
 				}, 300);
 				// 清空
 				game.numberOfFlipped = 0;
@@ -222,6 +224,7 @@ function Game(){
 		this.success = 0;
 		this.flippedTiles = [];
 		this.numberOfFlipped = [];
+		this.bees = [];
 		c = 200;
 		// 把所有的砖都扣过来
 		$(".flipped").removeClass("flipped");
@@ -235,8 +238,9 @@ function Game(){
 		// 背景颜色
 		$(".bb").css("background-color","#d6d6d6");
 		// 重新生成排列
-		this.selectBee(bees);
-		this.putImages();
+		this.selectBees(bees);
+		this.selectBee();
+		this.putHanzi();
 
 	}
 
@@ -310,24 +314,25 @@ function Game(){
 			}
 		}
 		// 组成数组
-			// 把图片数列变成两倍
+			// 把汉字数列变成两倍
 		var doubleBees = [];
 		for(var i in this.bees){
-			doubleBees.push(bees[i]);
-			doubleBees.push(bees[i]);
+			doubleBees.push(this.bees[i]);
+			doubleBees.push(this.bees[i]);
 		}
 			// 完成
 		for(var i=0;i<this.numberOfTiles;i++){
 			this.beeArray.push([doubleBees[i], locationArray[i]]);
 		}
+		console.log(this.beeArray);
 	}
 
-	// 将图片放入砖块的方法
-	this.putImages = function(){
+	// 将汉字放入砖块的方法
+	this.putHanzi = function(){
 		for(var i=0;i<this.numberOfTiles;i++){
 			var id = this.beeArray[i][1];
-			var image = this.beeArray[i][0];
-			$("#img"+id).css("background-image", "url(images/"+image+")");
+			var hz = this.beeArray[i][0];
+			$("#hz"+id).text(hz);
 		}
 	}
 }
