@@ -7,7 +7,7 @@ game.selectBees(bees); //选出汉字
 game.selectBee(); //做成数组
 game.putHanzi(); //把汉字放入砖块
 
-var c = 200;
+var c = 150;
 var t;
 
 // refreshHighscores();
@@ -225,7 +225,7 @@ function Game(){
 		this.flippedTiles = [];
 		this.numberOfFlipped = [];
 		this.bees = [];
-		c = 200;
+		c = 150;
 		// 把所有的砖都扣过来
 		$(".flipped").removeClass("flipped");
 		// 显示
