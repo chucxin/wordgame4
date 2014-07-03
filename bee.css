@@ -337,6 +337,7 @@
 	font-size: 12px;
 	font-family: helvetica;
 	margin-top: 70px;
+	position: relative;
 }
 
 
@@ -345,10 +346,9 @@
 	width:100%;
 	display: block;
 	position: relative;
-	float: right;
 	color: #D6BD00;
 	text-align: center;
-	font-size: 14px;
+	font-size: 18px;
 	margin-top: 10px;
 }
 
