@@ -47,7 +47,7 @@ switch($_COOKIE['language']){
 		$Ltryagain = "再试一次";
 		$Lyourname = "你的名字";
 		$Lsubmit = "提交";
-		$Lguide = "点击蜂格，找出相同的两个汉字。";
+		$Lguide = "点击蜂格，找出相同的两个汉字。所用时间越短、步数越少，得的分越高。";
 		break;
 	case 'vietnamese':
 		$Ltime = "Thời gian";
@@ -62,7 +62,7 @@ switch($_COOKIE['language']){
 		$Ltryagain = "Thử lần nữa";
 		$Lyourname = "Tên";
 		$Lsubmit = "Tải lên";
-		$Lguide = "Bấm những cái ô để tìm ra hai chữ Hán giống nhau.";
+		$Lguide = "Bấm những cái ô để tìm ra hai chữ Hán giống nhau. Hoàn thành trong thời gian càng ngắn và tốn càng ít số bước thì điểm càng cao.";
 		break;
 	case 'english':
 		$Ltime = "Time";
@@ -77,7 +77,7 @@ switch($_COOKIE['language']){
 		$Ltryagain = "Try Again";
 		$Lyourname = "Your name ";
 		$Lsubmit = "Submit";
-		$Lguide = "Click the cells to find 2 same characters.";
+		$Lguide = "Click the cells to find 2 same characters. Less time and steps you use, you get higher score.";
 		break;
 	case 'esperanto':
 		$Ltime = "Tempo";
@@ -92,7 +92,7 @@ switch($_COOKIE['language']){
 		$Ltryagain = "Reprovu";
 		$Lyourname = "Via nomo ";
 		$Lsubmit = "Submetu";
-		$Lguide = "Klaku la ĉelojn por trovi du samajn signojn.";
+		$Lguide = "Klaku la ĉelojn por trovi du samajn signojn. Ju malpli da tempo kaj paŝoj vi eluzas, des pli da poentoj vi gajnas.";
 		break;
 	default:
 		$Ltime = "Time";
@@ -107,7 +107,7 @@ switch($_COOKIE['language']){
 		$Ltryagain = "Try Again";
 		$Lyourname = "Your name ";
 		$Lsubmit = "Submit";
-		$Lguide = "Click the cells to find 2 same characters.";
+		$Lguide = "Click the cells to find 2 same characters. Less time and steps you use, you get higher score.";
 		break;
 }
 
