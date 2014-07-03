@@ -1,10 +1,9 @@
 $(document).ready(function(){
 
-var bees = ["有", "他", "是", "还", "不", "也", "没", "来", "祝", "昕", "狗", "猫"];
+var bees = ["有", "他", "是", "还", "不", "也", "没", "来", "祝", "昕", "狗", "猫", "哥", "妹", "书"];
 
 var game = new Game();
-game.selectBee(bees);
-game.putImages();
+game.selectBees(bees);
 
 var c = 200;
 var t;
@@ -272,10 +271,29 @@ function Game(){
 
 	// 游戏总砖数
 	this.numberOfTiles = 24;
-	// 随机排列的图片数列
+	// 随机选出的12个汉字
+	this.bees = [];
+	// 随机选出12个汉字的方法
+	this.selectBees = function(bees){
+		// 先选出12个数字
+		var numbers = [];
+		while(numbers.length < 12){
+			var number = parseInt(Math.random()*bees.length);
+			if(numbers.indexOf(number) == -1){
+				numbers.push(number);
+			}
+		}
+		for(var i in numbers){
+			this.bees.push(bees[numbers[i]]);
+		}
+		console.log(this.bees);
+	}
+
+
+	// 随机选出的汉字/位置数列
 	this.beeArray = [];
-	// 生成图片数列的方法
-	this.selectBee = function(bees){
+	// 汉字/位置数列的方法
+	this.selectBee = function(){
 		this.beeArray = [];
 		// 随机取数
 		var locationArray = []
@@ -294,7 +312,7 @@ function Game(){
 		// 组成数组
 			// 把图片数列变成两倍
 		var doubleBees = [];
-		for(var i in bees){
+		for(var i in this.bees){
 			doubleBees.push(bees[i]);
 			doubleBees.push(bees[i]);
 		}
