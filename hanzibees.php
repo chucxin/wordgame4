@@ -62,7 +62,7 @@ switch($_COOKIE['language']){
 		$Ltryagain = "Thử lần nữa";
 		$Lyourname = "Tên";
 		$Lsubmit = "Tải lên";
-		$Lguide = "Bấm những cái ô để tìm ra hai chữ Hán giống nhau. Hoàn thành trong thời gian càng ngắn và tốn càng ít số bước thì điểm càng cao.";
+		$Lguide = "Nhấp vào các ô để tìm ra hai chữ Hán giống nhau. Hoàn thành trong thời gian càng ngắn và tốn càng ít số bước thì điểm càng cao.";
 		break;
 	case 'english':
 		$Ltime = "Time";
